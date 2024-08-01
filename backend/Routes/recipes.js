@@ -1,8 +1,10 @@
+require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 
-const apiKey = "4845f47adf3d45948787556b678ec9cc";
-
+const apiKey = process.env.KITCHENACT_API_KEY;
 // Route pour obtenir les recettes
-router.get("/home", async (req, res) => {});
+router.get("/home", async (req, res) => {
+  const url = `https://api.spoonacular.com/recipes/complexSearch?query=salad&sort=healthiness&maxCalories=700&minProtein=20&number=20&apiKey=${apiKey}`;
+});
