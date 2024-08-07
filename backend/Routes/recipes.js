@@ -21,6 +21,7 @@ router.get("/home", async (req, res) => {
 
 // Route pour obtenir les recettes avec recherhce
 router.get("/home/searchresults", async (req, res) => {
+  const { query, sort, cuisine, diet, type } = req.query;
   let url = `https://api.spoonacular.com/recipes/complexSearch?query=${query}&number=20&apiKey=${apiKey}`;
 
   if (sort) {
