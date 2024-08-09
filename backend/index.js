@@ -6,8 +6,12 @@ app.use(express.json());
 app.use(cors());
 
 // Import de mes routes
+const recipesRouter = require("./Routes/recipes");
+const typesRouter = require("./Routes/types");
 
 // utilisation de mes routes
+app.use(recipesRouter);
+app.use(typesRouter);
 
 app.all("*", (req, res) => {
   res.status(404).json({ message: "all routes" });

@@ -14,7 +14,7 @@ router.get("/home", async (req, res) => {
   } catch (error) {
     console.log("error", error);
     res.status(500).json({
-      error: "An error has occurred",
+      message: error.message,
     });
   }
 });
@@ -42,7 +42,8 @@ router.get("/home/searchresults", async (req, res) => {
   } catch (error) {
     console.log("error", error);
     res.status(500).json({
-      error: "An error has occurred",
+      message: error.message,
     });
   }
 });
+module.exports = router;
