@@ -7,7 +7,7 @@ app.use(cors());
 
 // Import de mes routes
 const recipesRouter = require("./Routes/recipes");
-const typesRoute = require("./Routes/types");
+const typesRouter = require("./Routes/types");
 
 // utilisation de mes routes
 app.use(recipesRouter);
